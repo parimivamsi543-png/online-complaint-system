@@ -1,13 +1,13 @@
 import axios from 'axios';
 
-const baseURL = import.meta.env.VITE_API_URL;
+const API_URL = import.meta.env.VITE_API_URL;
 
-if (!baseURL) {
+if (!API_URL) {
   console.error('VITE_API_URL is not set. Add it to frontend/.env');
 }
 
 const API = axios.create({
-  baseURL,
+  baseURL: API_URL,
 });
 
 API.interceptors.response.use(
